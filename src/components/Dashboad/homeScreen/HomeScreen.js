@@ -283,20 +283,27 @@ const datas = [
 const HomeScreen = ({ props }) => {
   const [listingsdata, setListingsdata] = useState([]);
   const [search, setsearch] = useState("");
+  const [loading, setloading] = useState(false);
+  console.log(loading);
 
   useEffect(() => {
     const getdata = async () => {
+      setloading(true);
       const data1 = await fetch("https://rocky-springs-58380.herokuapp.com/listings/lim").then((res) => res.json());
       setListingsdata(data1.slice(0, 10));
+      setloading(false);
     };
 
     getdata();
   }, []);
 
   const handleSearch = async () => {
+    setloading(true);
     const data = await axios.get(`https://rocky-springs-58380.herokuapp.com/listings/search/${search}`);
     console.log(data.data);
-    setListingsdata(data.data);
+    setloading(false);
+    console.log(loading);
+    setListingsdata(data.data ? data.data : []);
   };
 
   const textFieldStyle = {
@@ -309,67 +316,148 @@ const HomeScreen = ({ props }) => {
     marginBottom: "10px",
   };
 
-  return (
-    <div style={{ marginLeft: "300px", marginTop: "80px", padding: "20px" }}>
-      {/* <TextField
-        id="standard-basic"
-        value={search}
-        onChange={(e) => {
-          setsearch(e.target.value);
-        }}
-        label="Search by property name"
-        InputProps={{
-          disableUnderline: true, // <== added this
-        }}
-        sx={textFieldStyle}
-        endAdornment={
-          <InputAdornment position="end">
-            <IconButton aria-label="search" onClick={handleSearch} edge="end">
-              <SearchRounded />
-            </IconButton>
-          </InputAdornment>
-        }
-      /> */}
+  if (loading) {
+    return (
+      <div style={{ height: "80vh", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <PropagateLoader color="#6600FF" />
+      </div>
+    );
+  } else {
+    return (
+      <div style={{ marginLeft: "300px", padding: "20px" }}>
+        {/* <TextField
+      id="standard-basic"
+      value={search}
+      onChange={(e) => {
+        setsearch(e.target.value);
+      }}
+      label="Search by property name"
+      InputProps={{
+        disableUnderline: true, // <== added this
+      }}
+      sx={textFieldStyle}
+      endAdornment={
+        <InputAdornment position="end">
+          <IconButton aria-label="search" onClick={handleSearch} edge="end">
+            <SearchRounded />
+          </IconButton>
+        </InputAdornment>
+      }
+    /> */}
 
-      {/* <Button onClick={handleSearch}>Search</Button> */}
-      {/* <Typography className="none" variant="h4" color="initial" mb={1}>
-        DashBoard
-      </Typography> */}
-      {listingsdata.length ? (
-        <div>
-          <FormControl sx={{ ml: 3, width: "35ch", marginBottom: "20px" }} variant="filled">
-            <InputLabel htmlFor="search">Search by name</InputLabel>
-            <OutlinedInput
-              sx={{ marginTop: "6px" }}
-              value={search}
-              onChange={(e) => {
-                setsearch(e.target.value);
-              }}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton aria-label="search" onClick={handleSearch} edge="end">
-                    <SearchRounded />
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="Search"
-            />
-          </FormControl>
-          <Grid container columnSpacing={0} spacing={3} alignItems="center">
-            {listingsdata.map((data, index) => (
-              <Grid key={index} item xs={12} md={6} lg={4} xl={3}>
-                <NewCard {...data} />
-              </Grid>
-            ))}
-          </Grid>
-        </div>
-      ) : (
-        <div style={{ height: "80vh", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <PropagateLoader color="#6600FF" />
-        </div>
-      )}
-    </div>
-  );
+        {/* <Button onClick={handleSearch}>Search</Button> */}
+        {/* <Typography className="none" variant="h4" color="initial" mb={1}>
+      DashBoard
+    </Typography> */}
+        <FormControl sx={{ ml: 3, marginTop: "80px", width: "35ch", marginBottom: "20px" }} variant="filled">
+          <InputLabel htmlFor="search">Search by name</InputLabel>
+          <OutlinedInput
+            sx={{ marginTop: "6px" }}
+            value={search}
+            onChange={(e) => {
+              setsearch(e.target.value);
+            }}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton aria-label="search" onClick={handleSearch} edge="end">
+                  <SearchRounded />
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Search"
+          />
+        </FormControl>
+        {listingsdata.length > 1 ? (
+          <div>
+            <Grid container columnSpacing={0} spacing={3} alignItems="center">
+              {listingsdata.map((data, index) => (
+                <Grid key={index} item xs={12} md={6} lg={4} xl={3}>
+                  <NewCard {...data} />
+                </Grid>
+              ))}
+            </Grid>
+          </div>
+        ) : (
+          <div
+            style={{
+              height: "80vh",
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            {/* <PropagateLoader color="#6600FF" /> */}
+            <h2>Oops, No data found...</h2>
+            <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg" />
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // return (
+  //   <div style={{ marginLeft: "300px", marginTop: "80px", padding: "20px" }}>
+  //     {/* <TextField
+  //       id="standard-basic"
+  //       value={search}
+  //       onChange={(e) => {
+  //         setsearch(e.target.value);
+  //       }}
+  //       label="Search by property name"
+  //       InputProps={{
+  //         disableUnderline: true, // <== added this
+  //       }}
+  //       sx={textFieldStyle}
+  //       endAdornment={
+  //         <InputAdornment position="end">
+  //           <IconButton aria-label="search" onClick={handleSearch} edge="end">
+  //             <SearchRounded />
+  //           </IconButton>
+  //         </InputAdornment>
+  //       }
+  //     /> */}
+
+  //     {/* <Button onClick={handleSearch}>Search</Button> */}
+  //     {/* <Typography className="none" variant="h4" color="initial" mb={1}>
+  //       DashBoard
+  //     </Typography> */}
+  //     {!loading && listingsdata.length > 0 ? (
+  //       <div>
+  //         <FormControl sx={{ ml: 3, width: "35ch", marginBottom: "20px" }} variant="filled">
+  //           <InputLabel htmlFor="search">Search by name</InputLabel>
+  //           <OutlinedInput
+  //             sx={{ marginTop: "6px" }}
+  //             value={search}
+  //             onChange={(e) => {
+  //               setsearch(e.target.value);
+  //             }}
+  //             endAdornment={
+  //               <InputAdornment position="end">
+  //                 <IconButton aria-label="search" onClick={handleSearch} edge="end">
+  //                   <SearchRounded />
+  //                 </IconButton>
+  //               </InputAdornment>
+  //             }
+  //             label="Search"
+  //           />
+  //         </FormControl>
+  //         <Grid container columnSpacing={0} spacing={3} alignItems="center">
+  //           {listingsdata.map((data, index) => (
+  //             <Grid key={index} item xs={12} md={6} lg={4} xl={3}>
+  //               <NewCard {...data} />
+  //             </Grid>
+  //           ))}
+  //         </Grid>
+  //       </div>
+  //     ) : (
+  //       <div style={{ height: "80vh", width: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  //         <PropagateLoader color="#6600FF" />
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 };
 
 export default HomeScreen;
