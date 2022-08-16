@@ -1,0 +1,234 @@
+.Postrequestsell {
+	margin-left: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 130px;
+}
+
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+
+.mypostpage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	min-height: 1000px;
+}
+
+.mypostbgcontainer {
+	position: relative;
+	bottom: 50px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	/* background-color: #85FFBD; */
+/* background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%); */
+
+	border-radius: 10px;
+	height: 800px;
+	width: 900px;
+	margin: 40px;
+	/* padding: 40px; */
+	/* border: 40px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mypostcontainer {
+	height: 90%;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.companydetails {
+	/* background-color: aqua; */
+	width: 100%;
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.companydetails input {
+	border: 5px solid #6600FF;
+	width: 350px;
+	height: 40px;
+	margin: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #482ff7;
+}
+
+.companydetails h3 {
+	font-size: 15px;
+}
+
+.wrapper {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+
+
+.jobrequirements {
+	/* background-color: aqua; */
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.jobrequirements input {
+	border: 1px solid #6600FF;
+	width: 350px;
+	height: 40px;
+	margin: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	color: #482ff7;
+	font-size: 14px;
+}
+
+.jobrequirements select {
+	border: 1px solid black;
+	width: 350px;
+	height: 40px;
+	margin: 15px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.jobrequirements h3 {
+	font-size: 16px;
+	color: #000;
+}
+
+.postbtnforsale {
+	padding: 10px 40px;
+	background-color: #482ff7;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+}
+
+option {
+	height: 100px;
+	/* background-color: #482ff7; */
+	padding: 30px;
+	margin: 30px;
+	font-size: 17px;
+	border-radius: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+	.mypostbgcontainer {
+		/* background-color: aqua; */
+	}
+
+	.companydetails input {
+		width: 280px;
+	}
+
+	.jobrequirements input {
+		width: 280px;
+	}
+
+	.jobrequirements select {
+		width: 280px;
+	}
+}
+
+@media only screen and (max-width: 747px) {
+	.mypostbgcontainer {
+	}
+
+	.companydetails input {
+		width: 220px;
+	}
+
+	.jobrequirements input {
+		width: 220px;
+	}
+
+	.jobrequirements select {
+		width: 220px;
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	.mypostpage {
+		height: 120%;
+	}
+
+	.mypostbgcontainer {
+		height: 1350px;
+		position: relative;
+		top: 10px;
+		align-items: flex-start;
+	}
+
+	.mypostcontainer {
+		position: relative;
+		top: 50px;
+	}
+
+	.companydetails {
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.jobrequirements {
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.companydetails input {
+		width: 100%;
+		position: relative;
+		right: 16px;
+	}
+
+	.jobrequirements input {
+		width: 100%;
+		position: relative;
+		right: 16px;
+	}
+
+	.jobrequirements select {
+		width: 100%;
+		position: relative;
+		right: 16px;
+	}
+
+	.wrapper {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.div1,
+	.div2,
+	.div3,
+	.div4,
+	.div5,
+	.div6,
+	.div7,
+	.div8,
+	.div9 {
+		width: 90%;
+	}
+}

@@ -1,0 +1,32 @@
+.navbarpage{
+    height: 80px;
+    width: 100vw;
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: 3;
+}
+
+.navbarcontainer{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aazronzlogo{
+    height: 65px;
+    width: auto;
+    margin-left: 50px;
+}
+
+.navloginbtn{
+    margin-right: 70px;
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+}

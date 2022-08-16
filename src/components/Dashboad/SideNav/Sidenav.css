@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@200;400&display=swap');
+
+
+
+.sidebar{
+    font-family: 'Poppins', sans-serif;
+
+    position: fixed;
+    top: 64px;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    background-color: #11101d;
+    box-shadow: rgba(2, 1, 1, 0.2) 0px 7px 29px 0px;
+    overflow-y: auto;
+
+}
+
+.sidebar::-webkit-scrollbar{
+    width: 10px;
+    cursor: pointer;
+
+}
+.sidebar::-webkit-scrollbar-thumb{
+    border-radius: 120vw;
+    background-color: rgb(92, 92, 92);
+}
+
+.sidebar::-webkit-scrollbar-track{
+    background-color: rgb(255, 255, 255);
+}
+
+.logodetails{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.logodetails, .logo_name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.logo_name{
+    margin-top: 30px;
+    font-size: 22px;
+
+}
+
+.sidenavlinks{
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: auto; */
+    /* background-color: aqua; */
+    height: auto;
+    margin-bottom: 200px;    
+}
+
+.downi{
+    margin-left: 00px;
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+
+.links{
+    color: white;
+
+    margin-left: 30px;
+    padding-top: 50px;
+    cursor: pointer;
+}
+
+.links i, .links span{
+    font-size: 19px;
+}
+
+.links i{
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.Request{
+    display: flex;
+    flex-direction: column;
+}
+
+.sublinks{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #21202c;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    border-left: rgb(63, 111, 243) 2px solid;
+
+}
+
+.sublinks span{
+    padding: 10px;
+    margin-left: 85px;
+    margin-top: 10px;
+    transition: display 1s ease;
+}
+
+.rotate{
+    transform: rotateX(-180deg);
+}
+
+.close{
+    display: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  .sidenavfooter{
+      position: fixed;
+        bottom: 100px;
+      left: 0px;
+      display: flex;
+      color: white;
+      width: 100%;
+      justify-content: space-evenly;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; 
+  }
+
+  .sidenavfooter i{
+      font-size: 25px;
+      cursor: pointer;
+  }
+
+.accountdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 60px;
+    background-color: #24223b;
+    position: fixed;
+    bottom: 0px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.accountdiv i{
+    font-size: 25px;
+    cursor: pointer;
+}

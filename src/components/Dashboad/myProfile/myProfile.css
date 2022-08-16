@@ -1,0 +1,8 @@
+@media (max-width: 600px) {
+   div {
+      display: flex;
+      flex-direction: column;
+      margin-top: 55px;
+      font-family: Poppins, sans-serif;
+   }
+}

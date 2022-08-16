@@ -1,0 +1,9 @@
+.signupsize {
+   /* margin-top: 60px; */
+   /* height: calc(100vh - 60px); */
+   height: 100vh;
+}
+Typography {
+   font-family: Circular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}

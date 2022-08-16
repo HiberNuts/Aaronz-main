@@ -1,0 +1,25 @@
+.faqpage{
+    margin-left: 300px;
+    margin-top: 65px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.faqtitle{
+    font-size: 32px;
+}
+
+.faqcontainer{
+    width: 70%;
+    margin-top: 30px;
+}
+
+.faq-row-wrapper{
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq2cont{
+    margin-top: 30px;
+}
